@@ -37,6 +37,10 @@ jobs:
       - name: Execute Cucumber Tests
         run: npm test
 
+      - name: Check report file
+        if: always()
+        run: cat reports/cucumber-report.json
+
       - name: Submit to AgileTest
         if: always()
         run: |
