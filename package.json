@@ -1,0 +1,12 @@
+{
+  "name": "cucumber-github",
+  "version": "1.0.0",
+  "description": "Simple Cucumber JS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0"
+  }
+}
