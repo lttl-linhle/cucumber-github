@@ -16,9 +16,9 @@ env:
   PROJECT_KEY: ${{ github.event.inputs.PROJECT_KEY || vars.PROJECT_KEY }}
 
 jobs:
-  run-test:
+  run-calculator:
+    name: Run Calculator Feature
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -34,17 +34,12 @@ jobs:
       - name: Create reports directory
         run: mkdir -p reports
 
-      - name: Execute Cucumber Tests
-        run: npm test
-
-      - name: Check report file
-        if: always()
-        run: cat reports/cucumber-report.json
+      - name: Execute Calculator Feature
+        run: npx cucumber-js features/calculator.feature --require features/step_definitions/calculator_steps.js --format json:reports/calculator-report.json --format progress
 
       - name: Submit to AgileTest
         if: always()
         run: |
-          # 1. Lấy token xác thực
           TOKEN=$(curl -s "$BASE_AUTH_URL/api/apikeys/authenticate" \
             -H 'Content-Type:application/json' \
             -d "{\"clientId\":\"$CLIENT_ID\",\"clientSecret\":\"$CLIENT_SECRET\"}" | tr -d '"')
@@ -54,29 +49,22 @@ jobs:
             exit 1
           fi
 
-          # 2. Upload kết quả Cucumber (JSON)
           if [ -n "${{ github.event.inputs.TEST_EXECUTION_KEY }}" ]; then
-            echo "Upload vào Test Execution: ${{ github.event.inputs.TEST_EXECUTION_KEY }}"
             curl -X POST "$BASE_URL/ds/test-executions/cucumber?projectKey=$PROJECT_KEY&testExecutionKey=${{ github.event.inputs.TEST_EXECUTION_KEY }}" \
               -H "Content-Type:application/json" \
               -H "Authorization:JWT $TOKEN" \
-              --data-binary "@reports/cucumber-report.json"
+              --data-binary "@reports/calculator-report.json"
           else
-            echo "Tạo mới Test Execution"
             curl -X POST "$BASE_URL/ds/test-executions/cucumber?projectKey=$PROJECT_KEY" \
               -H "Content-Type:application/json" \
               -H "Authorization:JWT $TOKEN" \
-              --data-binary "@reports/cucumber-report.json"
+              --data-binary "@reports/calculator-report.json"
           fi
 
       - name: Update Pipeline Status
         if: always()
         run: |
-          if [ "${{ job.status }}" == "success" ]; then
-            RESULT="success"
-          else
-            RESULT="failed"
-          fi
+          if [ "${{ job.status }}" == "success" ]; then RESULT="success"; else RESULT="failed"; fi
 
           TOKEN=$(curl -s "$BASE_AUTH_URL/api/apikeys/authenticate" \
             -X POST -H 'Content-Type:application/json' \
@@ -88,10 +76,5 @@ jobs:
             curl -X POST "$BASE_AUTH_URL/ds/test-executions/${{ github.event.inputs.TEST_EXECUTION_KEY }}/pipeline/history?projectKey=$PROJECT_KEY" \
               -H "Content-Type: application/json" \
               -H "Authorization: JWT $TOKEN" \
-              --data "{
-                \"jobURL\": \"$JOB_URL\",
-                \"repository\": \"${{ github.repository }}\",
-                \"tool\": \"github\",
-                \"result\": \"$RESULT\"
-              }"
+              --data "{\"jobURL\":\"$JOB_URL\",\"repository\":\"${{ github.repository }}\",\"tool\":\"github\",\"result\":\"$RESULT\"}"
           fi
