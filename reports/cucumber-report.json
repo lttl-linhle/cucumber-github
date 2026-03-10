@@ -1,0 +1,326 @@
+[
+  {
+    "description": "  As a user\n  I want to use a calculator\n  So that I don't need to calculate in my head",
+    "elements": [
+      {
+        "description": "",
+        "id": "calculator;add-two-numbers",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Add two numbers",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I have entered 50 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 272749
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I have entered 70 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I press add",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the result should be 120 on the screen",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38250
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "calculator;add-multiple-numbers",
+        "keyword": "Scenario Outline",
+        "line": 20,
+        "name": "Add multiple numbers",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I have entered 20 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18957
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I have entered 30 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I press add",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the result should be 50 on the screen",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12415
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "calculator;add-multiple-numbers",
+        "keyword": "Scenario Outline",
+        "line": 21,
+        "name": "Add multiple numbers",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I have entered 2 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16792
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I have entered 5 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22333
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I press add",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12707
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the result should be 7 on the screen",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11916
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "calculator;add-multiple-numbers",
+        "keyword": "Scenario Outline",
+        "line": 22,
+        "name": "Add multiple numbers",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I have entered 0 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13333
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I have entered 40 into the calculator",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10125
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I press add",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7417
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the result should be 40 on the screen",
+            "match": {
+              "location": "features/step_definitions/calculator_steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8708
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "calculator",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Calculator",
+    "tags": [],
+    "uri": "features/calculator.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "hello-cucumber;say-hello",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Say Hello",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I have a greeting \"Hello\"",
+            "match": {
+              "location": "features/step_definitions/steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40083
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I say it to \"Cucumber\"",
+            "match": {
+              "location": "features/step_definitions/steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25707
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I should hear \"Hello Cucumber!\"",
+            "match": {
+              "location": "features/step_definitions/steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21542
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "hello-cucumber",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Hello Cucumber",
+    "tags": [],
+    "uri": "features/hello.feature"
+  }
+]
