@@ -4,7 +4,7 @@
   "description": "Simple Cucumber JS project",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js features/**/*.feature --format json:reports/cucumber-report.json --format progress"
+    "test": "cucumber-js --format json:reports/cucumber-report.json --format progress"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.9.0"
